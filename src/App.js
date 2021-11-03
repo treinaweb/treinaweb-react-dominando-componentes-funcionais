@@ -1,18 +1,17 @@
-function Treinaweb(props) {
+function Treinaweb({ nome, ...props }) {
     return (
-        <ul>
-            <li>{props.nome}</li>
-            <li>{props.sobrenome}</li>
-            <li>{props.idade}</li>
-        </ul>
+        <div>
+            <span>{nome}</span>
+            <input type="text" {...props} />
+        </div>
     );
 }
 
 function App() {
     const pessoa = {
         nome: 'Mario',
-        sobrenome: 'Souza',
-        idade: 25,
+        value: 'Souza',
+        onClick: () => {},
     };
 
     return (
