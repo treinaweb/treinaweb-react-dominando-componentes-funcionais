@@ -11,10 +11,14 @@ function Treinaweb(props) {
 function App() {
     const [contador, setContador] = useState(0);
 
+    function handleClick() {
+        console.log('OLAAAA');
+    }
+
     return (
         <div>
             <Treinaweb nome={contador} /> {contador}
-            <button onClick={() => setContador(contador + 1)}>CLICK</button>
+            <button onClick={handleClick}>CLICK</button>
         </div>
     );
 }
