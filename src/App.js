@@ -1,29 +1,29 @@
 import { useState, useEffect } from 'react';
 
 function Treinaweb(props) {
+    useEffect(() => {
+        console.log('COMPONENTE CRIADO');
+        return () => {
+            console.log('COMPONENTE REMOVIDO');
+        };
+    }, []);
+
     return (
         <div>
-            <span>{props.nome}</span>
+            <span>TreinaWeb - {props.nome}</span>
         </div>
     );
 }
 
 function App() {
     const [contador, setContador] = useState(0);
-    const [contador2, setContador2] = useState(0);
-
-    useEffect(() => {
-        console.log(contador2);
-    }, [contador2]);
 
     return (
         <div>
             <button onClick={() => setContador(contador + 1)}>
                 CLICK 1 - {contador}
             </button>
-            <button onClick={() => setContador2(contador2 + 1)}>
-                CLICK 2 - {contador2}
-            </button>
+            {contador % 2 === 0 && <Treinaweb nome={contador} />}
         </div>
     );
 }
