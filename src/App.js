@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 function App() {
     const minhaLista = [
         { nome: 'João', idade: 23 },
@@ -8,11 +6,15 @@ function App() {
         { nome: 'Bruna', idade: 20 },
     ];
 
+    function falarNome(nome) {
+        console.log(nome);
+    }
+
     return (
         <div>
             <ul>
-                {minhaLista.map((item) => (
-                    <li>
+                {minhaLista.map((item, index) => (
+                    <li key={index} onClick={() => falarNome(item.nome)}>
                         {item.nome} - {item.idade}
                     </li>
                 ))}
