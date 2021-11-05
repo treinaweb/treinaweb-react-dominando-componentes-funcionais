@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react';
 
 function Treinaweb(props) {
     useEffect(() => {
-        console.log('COMPONENTE CRIADO');
+        const meuIntervalo = setInterval(() => {
+            console.log('OLA');
+        }, 2000);
+
         return () => {
+            clearInterval(meuIntervalo);
             console.log('COMPONENTE REMOVIDO');
         };
     }, []);
