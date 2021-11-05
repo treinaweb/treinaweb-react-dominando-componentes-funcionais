@@ -1,33 +1,22 @@
 import { useState, useEffect } from 'react';
 
-function Treinaweb(props) {
-    useEffect(() => {
-        const meuIntervalo = setInterval(() => {
-            console.log('OLA');
-        }, 2000);
-
-        return () => {
-            clearInterval(meuIntervalo);
-            console.log('COMPONENTE REMOVIDO');
-        };
-    }, []);
-
-    return (
-        <div>
-            <span>TreinaWeb - {props.nome}</span>
-        </div>
-    );
-}
-
 function App() {
-    const [contador, setContador] = useState(0);
+    const minhaLista = [
+        { nome: 'João', idade: 23 },
+        { nome: 'Maria', idade: 25 },
+        { nome: 'Paulo', idade: 32 },
+        { nome: 'Bruna', idade: 20 },
+    ];
 
     return (
         <div>
-            <button onClick={() => setContador(contador + 1)}>
-                CLICK 1 - {contador}
-            </button>
-            {contador % 2 === 0 && <Treinaweb nome={contador} />}
+            <ul>
+                {minhaLista.map((item) => (
+                    <li>
+                        {item.nome} - {item.idade}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
