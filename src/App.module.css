@@ -1,0 +1,13 @@
+.header {
+    text-align: center;
+    border-bottom: 1px solid var(--divider);
+    padding: 8px 0;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header span {
+    color: var(--primary);
+}
