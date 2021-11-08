@@ -1,0 +1,48 @@
+.music-list {
+    list-style-type: decimal;
+    margin: 32px 0 0;
+    max-height: 100%;
+    min-height: 100px;
+    overflow-y: auto;
+}
+
+.music-list-item {
+    padding: 8px 32px 8px 8px;
+    cursor: pointer;
+}
+
+.music-list-item:hover {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.music-list-item.selected::marker,
+.music-list-item.selected .title {
+    color: var(--primary);
+}
+
+.information {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        'title time'
+        'artist time';
+    align-items: center;
+}
+
+.title {
+    grid-area: title;
+}
+
+.artist {
+    grid-area: artist;
+    color: var(--text-secondary);
+}
+
+.time {
+    grid-area: time;
+    width: 80px;
+    text-align: right;
+    color: var(--text-secondary);
+}
