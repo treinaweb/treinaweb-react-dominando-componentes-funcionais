@@ -1,7 +1,12 @@
+import { createContext } from 'react';
 import styles from './App.module.css';
 import Index from './ui/pages/index';
+import { useApp } from './data/hooks/useApp.page';
+
+export const AppContext = createContext({});
 
 function App() {
+    const useAppValues = useApp();
     return (
         <>
             <header className={styles['header']}>
@@ -9,7 +14,9 @@ function App() {
                     Treina<span>Music</span>
                 </h1>
             </header>
-            <Index />
+            <AppContext.Provider value={useAppValues}>
+                <Index />
+            </AppContext.Provider>
         </>
     );
 }

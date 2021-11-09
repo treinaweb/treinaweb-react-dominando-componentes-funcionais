@@ -10,6 +10,7 @@ export default function MusicList(props) {
         <ul className={styles['music-list']}>
             {props.musics.map((music) => (
                 <li
+                    key={music.id}
                     className={[
                         styles['music-list-item'],
                         isSelected(music),
