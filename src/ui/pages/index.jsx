@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MusicList from '../components/data-display/MusicList/MusicList';
-import Timeline from '../components/inputs/Timeline/Timeline';
+import AudioPlayer from '../components/data-display/AudioPlayer/AudioPlayer';
 
 const musics = [
     {
@@ -8,12 +8,14 @@ const musics = [
         name: 'Abc',
         artist: '123',
         time: 95,
+        url: 'musics/Shadowing.mp3',
     },
     {
         id: 2,
         name: 'Def',
         artist: '456',
         time: 168,
+        url: 'musics/Stoker.mp3',
     },
 ];
 
@@ -27,7 +29,10 @@ export default function Index() {
                 onSelect={() => {}}
             />
 
-            <Timeline width={width} onChangeWidth={setWidth} />
+            <AudioPlayer
+                music={musics[1]}
+                onComplete={() => console.log('FINISHED')}
+            />
         </div>
     );
 }
